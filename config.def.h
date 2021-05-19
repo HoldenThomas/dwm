@@ -69,15 +69,15 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 2; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 2; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask, XK_F10 	spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask, XK_F11	spawn,		SHCMD("pamixer --allow-boost -d 2; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask, XK_F12	spawn,		SHCMD("pamixer --allow-boost -i 2; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask, XK_F10, 	spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask, XK_F11,	spawn,		SHCMD("pamixer --allow-boost -d 2; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask, XK_F12,	spawn,		SHCMD("pamixer --allow-boost -i 2; kill -44 $(pidof dwmblocks)") },
 	// Brightness
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("brightnessctl s +50") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("brightnessctl s 50-") },
 	// Apps
-	{ MODKEY, XK_w			spawn,		SHCMD("$BROWSER") },
-	{ MODKEY, XK_e			spawn,		SHCMD("pcmanfm") },
+	{ MODKEY, XK_w,			spawn,		SHCMD("$BROWSER") },
+	{ MODKEY, XK_e,			spawn,		SHCMD("pcmanfm") },
 
 
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
