@@ -3,6 +3,7 @@
 #include <X11/XF86keysym.h>
 
 #define TERMINAL "alacritty"
+#define TERMINAL_CLASS "Alacritty"
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
