@@ -7,10 +7,10 @@
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 5;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 5;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 5;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
@@ -130,9 +130,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
+	{ MODKEY,              		XK_z,      incrgaps,       {.i = +1 } },
+	{ MODKEY,  	  		XK_x,      incrgaps,       {.i = -1 } },
+	/*{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_o,      incrogaps,      {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
@@ -145,12 +145,17 @@ static Key keys[] = {
 	{ MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
+	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },*/
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,             		XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_y,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[5]} },
+	{ MODKEY,                       XK_i,      setlayout,      {.v = &layouts[11]} },
+	{ MODKEY|ShiftMask,             XK_i,      setlayout,      {.v = &layouts[12]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },
@@ -160,9 +165,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 0 } },
-	{ MODKEY,            			XK_u,	   togglescratch,  {.ui = 1 } },
-	{ MODKEY,            			XK_x,	   togglescratch,  {.ui = 2 } },
+	{ MODKEY,            		XK_apostrophe, togglescratch,  {.ui = 0 } },
+	{ MODKEY,          		XK_p,	   togglescratch,  {.ui = 1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
