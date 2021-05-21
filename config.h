@@ -3,6 +3,7 @@
 #include <X11/XF86keysym.h>
 
 #define TERMINAL "alacritty"
+#define TERMINAL_CLASS "Alacritty"
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -37,7 +38,7 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-g", "120x34", NULL };
+const char *spcmd1[] = {TERMINAL, "-t", "spterm", NULL };
 const char *spcmd2[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
@@ -53,8 +54,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ TERMINAL,     NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      	"spterm", NULL,           SPTAG(0),  1,          1,           0,        -1 },
+	{ TERMINAL_CLASS, NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,      	NULL, "spterm",           SPTAG(0),  1,          1,           0,        -1 },
 	{ NULL,      	"keepassxc", NULL,        SPTAG(1),  0,          0,           0,        -1 },
 	{ NULL,      	NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
