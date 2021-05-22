@@ -78,6 +78,7 @@ static Key keys[] = {
 	// Apps
 	{ MODKEY, XK_w,			spawn,		SHCMD("brave") },
 	{ MODKEY, XK_e,			spawn,		SHCMD("pcmanfm") },
+	{ MODKEY|ShiftMask, XK_l,	spawn,		SHCMD("slock") },
 
 
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
