@@ -2,8 +2,8 @@
 
 #include <X11/XF86keysym.h>
 
-#define TERMINAL "alacritty"
-#define TERMINAL_CLASS "Alacritty"
+#define TERMINAL "st"
+#define TERMINAL_CLASS "St"
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -27,7 +27,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#bf8ac2";
+static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -38,7 +38,7 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {TERMINAL, "-t", "spterm", NULL };
+const char *spcmd1[] = {TERMINAL, "-n", "spterm", "-g", "120x34", NULL };
 const char *spcmd2[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
@@ -54,10 +54,10 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ TERMINAL_CLASS, NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      	NULL, "spterm",           SPTAG(0),  1,          1,           0,        -1 },
-	{ NULL,      	"keepassxc", NULL,        SPTAG(1),  0,          0,           0,        -1 },
-	{ NULL,      	NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ TERMINAL_CLASS, NULL,     	NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,		"spterm", 	NULL,           SPTAG(0),  1,          1,           0,        -1 },
+	{ NULL,      	"keepassxc", 	NULL,        	SPTAG(1),  0,          0,           0,        -1 },
+	{ NULL,      	NULL,     	"Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
