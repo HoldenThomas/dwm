@@ -1,9 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-#include <X11/XF86keysym.h>
-
-#define TERMINAL "st"
-
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -15,7 +11,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#2C3E50";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -62,26 +58,10 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { TERMINAL, NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer -d 2; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer -i 2; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask, XK_F10, 	spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask, XK_F11,	spawn,		SHCMD("pamixer -d 2; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY|ShiftMask, XK_F12,	spawn,		SHCMD("pamixer -i 2; kill -44 $(pidof dwmblocks)") },
-	// Brightness
-	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("brightnessctl s +50") },
-	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("brightnessctl s 50-") },
-	// Apps
-	{ MODKEY, XK_w,			spawn,		SHCMD("brave") },
-	{ MODKEY, XK_e,			spawn,		SHCMD("pcmanfm") },
-	{ MODKEY|ShiftMask, XK_l,	spawn,		SHCMD("slock") },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
-	// Window shortcuts
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
