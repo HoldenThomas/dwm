@@ -68,8 +68,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	//My Shortcuts
 	{ 0,                       	XF86XK_AudioMute,    		spawn,          SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ 0,                       	XF86XK_AudioRaiseVolume,      	spawn,          SHCMD("pamixer -d 2; kill -44 $(pidof dwmblocks)") },
-	{ 0,                       	XF86XK_AudioLowerVolume,      	spawn,          SHCMD("pamixer -i 2; kill -44 $(pidof dwmblocks)") },
+	{ 0,                       	XF86XK_AudioRaiseVolume,      	spawn,          SHCMD("pamixer -i 2; kill -44 $(pidof dwmblocks)") },
+	{ 0,                       	XF86XK_AudioLowerVolume,      	spawn,          SHCMD("pamixer -d 2; kill -44 $(pidof dwmblocks)") },
 	{ 0,                       	XF86XK_MonBrightnessUp,      	spawn,          SHCMD("brightnessctl s +10%") },
 	{ 0,                       	XF86XK_MonBrightnessDown,      	spawn,          SHCMD("brightnessctl s 10%-") },
 	{ MODKEY,                       XK_w,				spawn,          SHCMD("$BROWSER") },
