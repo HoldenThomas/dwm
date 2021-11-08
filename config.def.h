@@ -82,8 +82,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_z,				spawn,          SHCMD("displayset") },
 	{ MODKEY|ShiftMask,             XK_z,				spawn,          SHCMD("displayselect") },
 	{ MODKEY,                       XK_s,				spawn,          SHCMD("dmenusync") },
-	{ MODKEY,                       XK_a,				spawn,          SHCMD(TERMINAL "-e pulsemixer") },
-	{ MODKEY|ShiftMask,             XK_a,				spawn,          SHCMD(TERMINAL "-e nmtui") },
+	{ MODKEY,                       XK_a,				spawn,          SHCMD(TERMINAL " -e pulsemixer") },
+	{ MODKEY|ShiftMask,             XK_a,				spawn,          SHCMD(TERMINAL " -e nmtui") },
 	{ MODKEY,                       XK_grave,			spawn,          SHCMD("dmenuunicode") },
 	{ MODKEY|ShiftMask,             XK_l,				spawn,          SHCMD("slock") },
 
