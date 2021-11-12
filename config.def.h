@@ -73,6 +73,7 @@ static Key keys[] = {
 	{ 0,                       	XF86XK_MonBrightnessUp,      	spawn,          SHCMD("brightnessctl s +10%") },
 	{ 0,                       	XF86XK_MonBrightnessDown,      	spawn,          SHCMD("brightnessctl s 10%-") },
 	{ MODKEY,                       XK_w,				spawn,          SHCMD("$BROWSER") },
+	{ MODKEY|ShiftMask,             XK_w,				spawn,          SHCMD("$BROWSER --incognito") },
 	{ MODKEY,                       XK_e,				spawn,          SHCMD("pcmanfm") },
 	{ MODKEY,                       XK_p,				spawn,          SHCMD("keepmenu") },
 	{ MODKEY|ShiftMask,             XK_p,				spawn,          SHCMD("keepassxc") },
