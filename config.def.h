@@ -87,6 +87,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_a,				spawn,          SHCMD(TERMINAL " -e nmtui") },
 	{ MODKEY,                       XK_grave,			spawn,          SHCMD("dmenuunicode") },
 	{ MODKEY|ShiftMask,             XK_l,				spawn,          SHCMD("slock") },
+	{ MODKEY,             		XK_Escape,			spawn,          SHCMD("syscontrol") },
 
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
