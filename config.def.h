@@ -76,7 +76,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_e,				spawn,          SHCMD("pcmanfm") },
 	{ MODKEY,                       XK_p,				spawn,          SHCMD("keepmenu") },
 	{ MODKEY|ShiftMask,             XK_p,				spawn,          SHCMD("keepassxc") },
-	{ MODKEY,                       XK_m,				spawn,          SHCMD("demnumount") },
+	{ MODKEY,                       XK_m,				spawn,          SHCMD("dmenumount") },
 	{ MODKEY|ShiftMask,             XK_m,				spawn,          SHCMD("dmenuumount") },
 	{ MODKEY|ControlMask,           XK_m,				spawn,          SHCMD("dmenumountcifs") },
 	{ MODKEY,                       XK_z,				spawn,          SHCMD("displayset") },
