@@ -74,6 +74,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,				spawn,          SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,             XK_w,				spawn,          SHCMD("$BROWSER --incognito") },
 	{ MODKEY,                       XK_e,				spawn,          SHCMD("pcmanfm") },
+	{ MODKEY|ShiftMask,             XK_e,				spawn,          SHCMD(TERMINAL " -e lf") },
 	{ MODKEY,                       XK_p,				spawn,          SHCMD("keepmenu") },
 	{ MODKEY|ShiftMask,             XK_p,				spawn,          SHCMD("keepassxc") },
 	{ MODKEY,                       XK_m,				spawn,          SHCMD("dmenumount") },
