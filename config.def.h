@@ -59,8 +59,9 @@ static const char *const autostart[] = {
 	"setbg", NULL,
 	"setrgb", NULL,
 	"dwmblocks", NULL,
+    "nm-applet", NULL,
 	"nextcloud", "--background", NULL,
-	"syncthing", "--no-browser", NULL,
+//	"syncthing", "--no-browser", NULL,
 	"discord", "--start-minimized", NULL,
 	"steam-runtime", "-silent", NULL,
 	NULL /* terminate */
@@ -92,7 +93,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
+	{ "|M|",      centeredmaster },    /* first entry is default */
 	{ "[M]",      monocle },
 	{ "[@]",      spiral },
 	{ "[\\]",     dwindle },
@@ -103,7 +104,7 @@ static const Layout layouts[] = {
 	{ "###",      nrowgrid },
 	{ "---",      horizgrid },
 	{ ":::",      gaplessgrid },
-	{ "|M|",      centeredmaster },
+	{ "[]=",      tile },
 	{ ">M>",      centeredfloatingmaster },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
