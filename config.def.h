@@ -60,7 +60,7 @@ static const char *const autostart[] = {
 	"setbg", NULL,
 	"setrgb", NULL,
 	"dwmblocks", NULL,
-    	"nm-applet", NULL,
+   	"nm-applet", NULL,
 	"nextcloud", "--background", NULL,
 //	"syncthing", "--no-browser", NULL,
 	"discord", "--start-minimized", NULL,
